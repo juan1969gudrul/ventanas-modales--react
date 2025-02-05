@@ -1,12 +1,26 @@
+import { useState } from "react";
 import "./App.css";
-
 function App() {
+  const [showModal, setShowModal] = useState(false);
+  const openModal = () => {
+    setShowModal(true);
+  };
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
       <button className="show-modal">Show modal 1</button>
       <button className="show-modal">Show modal 2</button>
       <button className="show-modal">Show modal 3</button>
-      <div className="modal hidden">
+       {showModal && (
+<
+
+>
+
+       )}
+      <div className="modal">
         <button className="close-modal">&times;</button>
         <h1>I'm a modal window 😍</h1>
         <p>
@@ -19,7 +33,7 @@ function App() {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div className="overlay hidden"></div>
+      <div className="overlay"></div>
     </>
   );
 }
